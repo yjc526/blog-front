@@ -9,7 +9,7 @@ export default function Nav() {
     >
       <div className="container">
         <a className="navbar-brand" href="index.html">
-          빈산님의 블로그
+          영진님의 블로그
         </a>
         <button
           className="navbar-toggler navbar-toggler-right"
