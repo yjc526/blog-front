@@ -12,7 +12,7 @@ export default function Header() {
         <div className="row">
           <div className="col-lg-8 col-md-10 mx-auto">
             <div className="site-heading">
-              <h1>YJ CHOI</h1>
+              <h1>BLOG</h1>
               <span className="subheading">블로그 개발중...</span>
             </div>
           </div>

@@ -33,7 +33,7 @@ export default function Footer() {
               </li>
             </ul>
             <p className="copyright text-muted">
-              Copyright &copy; YJ CHOI 2019
+              Copyright &copy; Young Jin  CHOI  2019
             </p>
           </div>
         </div>
