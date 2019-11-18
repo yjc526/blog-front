@@ -22,13 +22,44 @@ export default function Join() {
     setIsEmailChecked(data.result);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isEmailChecked || isEmailChecked === 'yet') {
+      alert('이메일 중복 확인 플리즈!');
+      return;
+    }
+    if (!isPasswordSame) {
+      alert('패스워드 확인점');
+      return;
+    }
+    if (!e.target.name.value || !email || !password) {
+      alert('모든 필드가 필수입니다!');
+      return;
+    }
+    const { data } = await axios.post(
+      `${baseURL}/auth/join`,
+      {
+        name: e.target.name.value,
+        email,
+        password,
+      },
+    );
+    if (data.result) {
+      setJoinResult(true);
+    } else {
+      alert('회원가입 실패ㅠㅠ 관리자에게 문의하세요');
+    }
+  };
+
   return (
     <>
-      <form>
+      {joinResult && <Redirect to="/login" />}
+      <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>별명</label>
           <input
             type="text"
+            name="name"
             className="form-control"
             placeholder="블로그에서 사용할 이름"
           />
