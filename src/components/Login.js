@@ -6,6 +6,7 @@ import { baseURL } from '../config';
 export default function Login({
   setIsLoggedIn,
   setIsAdmin,
+  history,
 }) {
   const [loginState, setLoginState] = useState('init');
   const handleSubmit = async (e) => {
@@ -67,6 +68,13 @@ export default function Login({
         </div>
         <button type="submit" className="btn btn-primary">
           Submit
+        </button>
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={() => history.push('/join')}
+        >
+          회원가입
         </button>
       </form>
     </>
